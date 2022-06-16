@@ -1,0 +1,62 @@
+version: "3"
+
+services:
+  postgres:
+    build:
+      context: ./postgres
+    container_name: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret123
+      - TZ=UTC
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - frontend
+
+  graphql:
+    container_name: graphql
+    image: graphile/postgraphile
+    ports:
+    - "5000:5000"
+    depends_on:
+    - "postgres"
+    environment:
+      - DATABASE_URL=postgres://postgres:secret123@postgres:5432/postgres
+    restart: always
+    networks:
+      - frontend
+    command:
+      [
+        "--connection", "${DATABASE_URL}",
+        "--schema", "graphql",
+        "--enhance-graphiql"
+      ]
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+    - "postgres"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - frontend
+
+networks:
+  # Public frontend network (External)
+  frontend:
+    internal: false
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+
+# --connection postgres://POSTGRES_USER:POSTGRES_PASSWORD@POSTGRES_HOST:POSTGRES_PORT/POSTGRES_DATABASE --schema app_public --watch
+
+volumes:
+  postgres-data: {}
