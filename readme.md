@@ -10,11 +10,11 @@
 ## docker volume löschen
 `docker volume rm major-project ...`
 
-## alle vomues ausgeben (aufgeslistet)
+## alle volumes ausgeben (aufgeslistet)
 `docker volume ls`
 
 ## docker logs ausgeben (postgres oder grapgh)
-`docker logs -f postgres `
+`docker logs -f postgres`
 
 ## namen von contaier kann ausgegeben werden (Im docker composer container name)
 
