@@ -1,26 +1,26 @@
-## start docker alle container services (wo docker-compose.yml liegt)
-`docker-compose up -d`
+# start docker container services (wo docker-compose.yml liegt)
+>`docker-compose up -d`
 
-## stopp von allen docker container services
-`docker-compose down`
+# alle docker container services stoppen
+>`docker-compose down`
 
-## ein serice stoppen (mit container name am ende)
-`docker stop postgres`
+# nur ein service stoppen (mit container name am ende)
+>`docker stop postgres`
 
-## docker volume löschen
-`docker volume rm major-project ...`
+# docker volume löschen
+>`docker volume rm major-project ...`
 
-## alle volumes ausgeben (aufgeslistet)
-`docker volume ls`
+# alle volumes ausgeben
+>`docker volume ls`
 
-## docker logs ausgeben (postgres oder grapgh)
-`docker logs -f postgres`
+# docker logs ausgeben (z.B.: postgres oder grapgh)
+>`docker logs -f postgres`
 
-## namen von contaier kann ausgegeben werden (Im docker composer container name)
+# namen von contaier kann ausgegeben werden (Im docker composer container name)
 
-## ist an IP gebunden (nur im frontend folder ändern, apollo, GET)
+# ist an IP gebunden (nur im frontend folder ändern, apollo, GET)
 
-## php artisan serve --host IP
+# php artisan serve --host IP
 
 # postgres für graphql das backend
 
