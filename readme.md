@@ -1,3 +1,6 @@
+# docker build
+>`docker-compose build`
+
 # start docker container services (wo docker-compose.yml liegt)
 >`docker-compose up -d`
 
