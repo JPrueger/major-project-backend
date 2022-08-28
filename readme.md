@@ -1,38 +1,24 @@
 # docker build
 >`docker-compose build`
 
-# start docker container services (wo docker-compose.yml liegt)
+# start docker container services (where docker-compose.yml is located)
 >`docker-compose up -d`
 
-# alle docker container services stoppen
+# stop all docker container services
 >`docker-compose down`
 
-# nur ein service stoppen (mit container name am ende)
+# stop only one service (with container name at the end)
 >`docker stop postgres`
 
-# docker volume löschen
+# docker volume delete
 >`docker volume rm major-project ...`
 
-# alle volumes ausgeben
+# Output all volumes
 >`docker volume ls`
 
-# docker logs ausgeben (z.B.: postgres oder grapgh)
+# Output docker logs (e.g.: postgres or grapgh)
 >`docker logs -f postgres`
-
-# namen von contaier kann ausgegeben werden (Im docker composer container name)
-
-# ist an IP gebunden (nur im frontend folder ändern, apollo, GET)
-
-# php artisan serve --host IP
-
-# postgres für graphql das backend
-
-# graphql graphile ist graphql server
 
 # http://localhost:5000/graphiql
 
 # http://localhost:5050/browser/ -> postgres admin
-
-# Laravel
-
-# VueJS
